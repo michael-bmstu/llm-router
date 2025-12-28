@@ -14,10 +14,35 @@ Each question group can have its own AI agent implemented.
 This project is responsible for routing requests to the appropriate parts of the system.
 
 ## Project struct
-- `main.py` : main program
+- `main.py` : main loop
 - `router.py` : LLM router implementation with LangChain 
 - `graph.py` :  application graph
 - `.env` : enviroment varibales 
 - `requirements.txt` : requirements for project launch
-- `` : 
-- `` : 
+- **`img`**
+    - `graph.jpg` : graph visualisation
+
+## Implemented functionality
+- Question Classification
+- Question Forwarding to Agents (template)
+- Graph Visualization
+
+## Graph
+After receiving a question from a user, the request is sent to the router, then, depending on the category of the question, it is transferred to one of the AI ​​agents (documents, courses, tests, inernships) or to an admissions officer (human support).
+
+![](img/graph.jpg)
+
+## Launhing
+1. **create venv**
+```
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+2. Insert your mistral api key into .env
+
+3. **run router**
+```
+python main.py
+```

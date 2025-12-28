@@ -36,7 +36,7 @@ def admissions_officier(state: RouterState) -> RouterState:
 
 # Edge
 def route_question(state: RouterState) \
-    -> Literal["document", "tests", "courses", "internships", "support"]:
+    -> Literal["document", "tests", "courses", "internships", "human support"]:
     cat = state['category']
     if cat == 'document submission':
         return "document"
@@ -47,7 +47,7 @@ def route_question(state: RouterState) \
     elif cat == 'internships':
         return "internships"
     elif cat == 'other':
-        return "support"
+        return "human support"
     else:
         print(cat)
         return "support"
@@ -60,7 +60,7 @@ builder.add_node("document", document_agent)
 builder.add_node("tests", tests_agent)
 builder.add_node("courses", courses_agent)
 builder.add_node("internships", internships_agent)
-builder.add_node("support", admissions_officier)
+builder.add_node("human support", admissions_officier)
 
 # Edges
 builder.add_edge(START, "choose agent")
@@ -69,7 +69,7 @@ builder.add_edge("document", END)
 builder.add_edge("tests", END)
 builder.add_edge("courses", END)
 builder.add_edge("internships", END)
-builder.add_edge("support", END)
+builder.add_edge("human support", END)
 
 router_graph = builder.compile()
 
@@ -78,4 +78,3 @@ if __name__ == "__main__":
     graph_vis = router_graph.get_graph()
     with open("img/graph.jpg", "wb") as f:
         f.write(graph_vis.draw_mermaid_png())
-    print(graph_vis.draw_ascii())
