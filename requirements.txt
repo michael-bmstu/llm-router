@@ -1,2 +1,3 @@
 lanchain
 langchain-mistralai
+grandalf
