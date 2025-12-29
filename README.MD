@@ -19,8 +19,7 @@ This project is responsible for routing requests to the appropriate parts of the
 - `graph.py` :  application graph
 - `.env` : enviroment varibales 
 - `requirements.txt` : requirements for project launch
-- **`img`**
-    - `graph.jpg` : graph visualisation
+- **`img`** : pictures for presentation
 
 ## Implemented functionality
 - Question Classification
@@ -33,8 +32,15 @@ After receiving a question from a user, the request is sent to the router, then,
 ![](img/graph.jpg)
 
 ## Launhing
-1. **create venv**
+### Docker
 ```
+docker build -t llm-router .
+docker run -it -e MISTRAL_KEY=<your mistral api key> llm-router
+```
+
+### Local
+1. create venv
+```cmd
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
@@ -42,7 +48,17 @@ pip install -r requirements.txt
 
 2. Insert your mistral api key into .env
 
-3. **run router**
-```
+3. run router
+```cmd
 python main.py
 ```
+
+-----------
+! To exit press `**Ctrl + C**`
+
+-----------
+
+## Example of work
+The screenshot shows how the router categorizes questions and forwards them to the AI agents.
+
+![](img/example.jpg)
