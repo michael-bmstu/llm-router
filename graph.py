@@ -27,7 +27,7 @@ def courses_agent(state: RouterState) -> RouterState:
     return state
 
 def internships_agent(state: RouterState) -> RouterState:
-    print("The message has been forwarded to the - internships agent.")
+    print("The message has been forwarded to the internships agent.")
     return state
 
 def admissions_officier(state: RouterState) -> RouterState:

@@ -17,7 +17,8 @@ This project is responsible for routing requests to the appropriate parts of the
 - `main.py` : main loop
 - `router.py` : LLM router implementation with LangChain 
 - `graph.py` :  application graph
-- `.env` : enviroment varibales 
+- `.env` : enviroment varibales
+- `Dockerfile` : to build docker image
 - `requirements.txt` : requirements for project launch
 - **`img`** : pictures for presentation
 
@@ -54,7 +55,7 @@ python main.py
 ```
 
 -----------
-! To exit press `**Ctrl + C**`
+! To exit press **`Ctrl + C`**
 
 -----------
 
