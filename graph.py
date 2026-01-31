@@ -50,7 +50,7 @@ def route_question(state: RouterState) \
         return "human support"
     else:
         print(cat)
-        return "support"
+        return "human support"
 
 # Graph
 builder = StateGraph(RouterState)
